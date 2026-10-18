@@ -74,7 +74,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - run: pip install cibuildwheel==2.21.3
+      - run: pip install cibuildwheel==4.2.1
       - id: set-matrix
         run: |
           MATRIX_INCLUDE=$(
@@ -112,7 +112,7 @@ jobs:
       if: runner.os == 'Linux'
       uses: docker/setup-qemu-action@v2
 
-    - uses: pypa/cibuildwheel@7940a4c0e76eb2030e473a5f864f291f63ee879b  # v2.21.3
+    - uses: pypa/cibuildwheel@e090b81e30c4d855ea63bf4b6e59204c09a101ae # version 4.2.1
       with:
         only: ${{ matrix.only }}
       env:

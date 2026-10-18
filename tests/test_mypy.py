@@ -14,7 +14,7 @@ else:
     # notes that mypy emits when passing an unexpected keyword argument
     # and at no other time.
     def renormalize_error_messages(messages):
-        messages = [x for x in messages if not x.endswith(' defined here')]
+        messages = [x for x in messages if not x.endswith(' defined here') and ' defined in ' not in x]
         return normalize_error_messages(messages)
 
     mypy.test.testcmdline.normalize_error_messages = renormalize_error_messages
