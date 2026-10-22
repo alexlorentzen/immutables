@@ -14,7 +14,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
         os: [windows-latest, ubuntu-latest, macos-latest]
         arch: [x64, x86]
         exclude:
@@ -24,9 +24,6 @@ jobs:
           - os: macos-latest
             arch: x86
           # https://github.com/actions/setup-python/issues/948
-          - os: macos-latest
-            arch: x64
-            python-version: 3.8
           - os: macos-latest
             arch: x64
             python-version: 3.9

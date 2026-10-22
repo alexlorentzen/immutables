@@ -30,7 +30,7 @@ copy-on-write approach (the benchmark code is available
 Installation
 ------------
 
-``immutables`` requires Python 3.8+ and is available on PyPI::
+``immutables`` requires Python 3.9+ and is available on PyPI::
 
     $ pip install immutables
 

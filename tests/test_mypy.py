@@ -29,11 +29,11 @@ else:
     else:
         mypy_path = parent_dir
 
-    class ImmuMypyTest(mypy.test.testcmdline.PythonCmdlineSuite):
-        data_prefix = test_data_prefix
-        files = ['check-immu.test']
+    if sys.version_info >= (3, 10):
+        class ImmuMypyTest(mypy.test.testcmdline.PythonCmdlineSuite):
+            data_prefix = test_data_prefix
+            files = ['check-immu.test']
 
-        def run_case(self, testcase):
-            if sys.version_info >= (3, 7):
+            def run_case(self, testcase):
                 os.environ["MYPYPATH"] = mypy_path
-            super().run_case(testcase)
+                super().run_case(testcase)
